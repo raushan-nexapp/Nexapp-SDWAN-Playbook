@@ -1,0 +1,304 @@
+site_name: Nexapp SD-WAN Documentation
+site_description: User Manuals for NexappOS Firmware & Nexapp SDWAN Orchestrator/Controller
+site_author: Nexapp Technologies
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - navigation.path
+    - navigation.prune
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.tabs.link
+    - content.code.copy
+    - toc.follow
+  logo: assets/images/nexapp-logo-white.png
+  favicon: assets/images/favicon.ico
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/pdf-download.js
+
+plugins:
+  - search
+  - with-pdf:
+      author: Nexapp Technologies
+      copyright: Copyright &copy; 2026 Nexapp Technologies Pvt. Ltd.
+      cover_title: Nexapp SDWAN Playbook
+      cover_subtitle: NexappOS Firmware & SDWAN Controller — Complete Reference
+      toc_title: Table of Contents
+      toc_level: 3
+      output_path: pdf/Nexapp-SDWAN-Playbook.pdf
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.mark
+  - pymdownx.keys
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Home: index.md
+  - NexappOS Firmware:
+    - firmware/index.md
+    - Introduction:
+      - About NexappOS: firmware/01-introduction/about.md
+      - System Requirements: firmware/01-introduction/requirements.md
+      - Getting Started: firmware/01-introduction/getting-started.md
+    - Installation:
+      - Download & Install: firmware/02-installation/download-install.md
+      - Initial Setup: firmware/02-installation/initial-setup.md
+      - Network Configuration: firmware/02-installation/network-config.md
+      - Controller Registration: firmware/02-installation/controller-registration.md
+    - Setup Wizard:
+      - Initial Setup Wizard: firmware/16-wizard/setup-wizard.md
+    - System Administration:
+      - Dashboard: firmware/03-system/dashboard.md
+      - System Settings: firmware/03-system/settings.md
+      - SSH Access: firmware/03-system/ssh.md
+      - Backup & Restore: firmware/03-system/backup-restore.md
+      - Firmware Update: firmware/03-system/firmware-update.md
+      - Certificates: firmware/03-system/certificates.md
+      - SNMP: firmware/03-system/snmp.md
+      - Storage: firmware/03-system/storage.md
+      - Accounts: firmware/03-system/accounts.md
+      - Reboot & Shutdown: firmware/03-system/reboot-shutdown.md
+      - Factory Reset: firmware/03-system/factory-reset.md
+      - Scheduled Tasks: firmware/03-system/schedule.md
+      - Topology View: firmware/03-system/topology.md
+    - Network Configuration:
+      - Interfaces & Devices: firmware/04-network/interfaces.md
+      - DNS & DHCP: firmware/04-network/dns-dhcp.md
+      - Static Routes: firmware/04-network/static-routes.md
+      - Multi-WAN: firmware/04-network/multi-wan.md
+      - Dynamic DNS: firmware/04-network/ddns.md
+      - Reverse Proxy: firmware/04-network/reverse-proxy.md
+    - SD-WAN Fabric:
+      - Overview: firmware/05-sdwan/overview.md
+      - Overlay Tunnels: firmware/05-sdwan/overlay-tunnels.md
+      - Underlay Members: firmware/05-sdwan/underlay-members.md
+      - Encryption (IPsec): firmware/05-sdwan/encryption.md
+      - Shortcuts (ADVPN): firmware/05-sdwan/advpn.md
+      - Join Tokens: firmware/05-sdwan/join-tokens.md
+    - Performance SLA:
+      - Health Dashboard: firmware/06-sla/health-dashboard.md
+      - Path Monitors: firmware/06-sla/path-monitors.md
+      - Quality Tiers: firmware/06-sla/quality-tiers.md
+      - Traffic Steering: firmware/06-sla/traffic-steering.md
+      - Tier Matrix: firmware/06-sla/tier-matrix.md
+      - Tenants: firmware/06-sla/tenants.md
+    - Quality of Service:
+      - Overview: firmware/07-qos/overview.md
+      - Interface QoS: firmware/07-qos/interface-qos.md
+      - QoS Rules: firmware/07-qos/rules.md
+    - Routing:
+      - BGP Configuration: firmware/08-routing/bgp.md
+      - OSPF Configuration: firmware/08-routing/ospf.md
+      - RIP Configuration: firmware/08-routing/rip.md
+      - VRF Multi-Tenancy: firmware/08-routing/vrf.md
+      - Application Aware Routing: firmware/08-routing/app-aware-routing.md
+    - High Availability:
+      - Overview: firmware/09-ha/overview.md
+      - VRRP Configuration: firmware/09-ha/vrrp.md
+      - Failover & Recovery: firmware/09-ha/failover.md
+    - Firewall & Security:
+      - Zones & Policies: firmware/10-firewall/zones-policies.md
+      - Port Forwarding: firmware/10-firewall/port-forwarding.md
+      - NAT Rules: firmware/10-firewall/nat.md
+      - Firewall Rules: firmware/10-firewall/rules.md
+      - Conntrack: firmware/10-firewall/conntrack.md
+      - Users Database: firmware/10-firewall/users-database.md
+      - Firewall Objects: firmware/10-firewall/objects.md
+    - Security Services:
+      - DPI Engine: firmware/11-security/dpi.md
+      - Threat Shield IP: firmware/11-security/threat-shield-ip.md
+      - Threat Shield DNS: firmware/11-security/threat-shield-dns.md
+      - IPS Engine: firmware/11-security/ips.md
+      - Web Filter: firmware/11-security/web-filter.md
+      - Antivirus: firmware/11-security/antivirus.md
+      - Anti-Spam: firmware/11-security/anti-spam.md
+      - SSL Inspection: firmware/11-security/ssl-inspection.md
+      - Security Analytics: firmware/11-security/analytics.md
+      - Security Rating: firmware/11-security/rating.md
+    - VPN:
+      - OpenVPN Road Warrior: firmware/12-vpn/openvpn-rw.md
+      - OpenVPN Site-to-Site: firmware/12-vpn/openvpn-s2s.md
+      - WireGuard: firmware/12-vpn/wireguard.md
+      - IPsec Tunnels: firmware/12-vpn/ipsec.md
+      - L2TP: firmware/12-vpn/l2tp.md
+      - GRE Tunnels: firmware/12-vpn/gre.md
+      - ZeroTier: firmware/12-vpn/zerotier.md
+      - VXLAN: firmware/12-vpn/vxlan.md
+    - Monitoring & Diagnostics:
+      - Real-Time Monitoring: firmware/13-monitoring/realtime.md
+      - Ping & Traceroute: firmware/13-monitoring/ping-traceroute.md
+      - Ping Latency Monitor: firmware/13-monitoring/ping-latency-monitor.md
+      - Speedtest: firmware/13-monitoring/speedtest.md
+      - MTR: firmware/13-monitoring/mtr.md
+      - DNS Lookup: firmware/13-monitoring/dns-lookup.md
+      - iPerf3: firmware/13-monitoring/iperf3.md
+      - Logs: firmware/13-monitoring/logs.md
+    - DC/DR Failover:
+      - Overview: firmware/14-dcdr/overview.md
+      - Configuration: firmware/14-dcdr/configuration.md
+      - Recovery: firmware/14-dcdr/recovery.md
+    - Troubleshooting:
+      - Common Issues: firmware/15-troubleshooting/common-issues.md
+      - SD-WAN Troubleshooting: firmware/15-troubleshooting/sdwan.md
+      - Connectivity Issues: firmware/15-troubleshooting/connectivity.md
+    - Glossary: firmware/glossary.md
+
+  - Nexapp SDWAN Controller:
+    - controller/index.md
+    - Getting Started:
+      - About Nexapp SDWAN: controller/01-introduction/about.md
+      - Architecture Overview: controller/01-introduction/architecture.md
+      - Quick Start: controller/01-introduction/getting-started.md
+      - System Requirements: controller/02-installation/requirements.md
+      - Docker Deployment: controller/02-installation/docker.md
+      - Manual Installation: controller/02-installation/manual.md
+      - Initial Configuration: controller/02-installation/initial-config.md
+    - Devices:
+      - Device Registration: controller/03-devices/registration.md
+      - Device Configuration: controller/03-devices/configuration.md
+      - Device Groups: controller/03-devices/groups.md
+      - Device Monitoring: controller/03-devices/monitoring.md
+      - Remote Terminal: controller/03-devices/terminal.md
+    - Configurations:
+      - Templates: controller/17-configurations/templates.md
+      - VPN Servers: controller/17-configurations/vpn-servers.md
+      - Device Groups: controller/17-configurations/device-groups.md
+    - Users & Organizations:
+      - Organizations: controller/13-multi-tenancy/organizations.md
+      - User Management: controller/13-multi-tenancy/users.md
+      - Device Access Zones: controller/13-multi-tenancy/access-zones.md
+    - SD-WAN Fabric:
+      - Topology Overview: controller/04-topology/overview.md
+      - Topology Wizard: controller/04-topology/wizard.md
+      - Hub & Spoke: controller/04-topology/hub-spoke.md
+      - Mesh Topology: controller/04-topology/mesh.md
+      - Configuration Push: controller/05-deployment/config-push.md
+      - Deployment Pipeline: controller/05-deployment/pipeline.md
+      - Deploy History: controller/05-deployment/history.md
+    - Policy Engine:
+      - Overview: controller/06-policies/overview.md
+      - BGP: controller/06-policies/bgp.md
+      - OSPF: controller/06-policies/ospf.md
+      - Performance SLA: controller/06-policies/sla.md
+      - QoS Config: controller/06-policies/qos.md
+      - Steering Policy: controller/06-policies/steering.md
+      - Tenant Policy: controller/06-policies/tenant.md
+      - Route Reflector Overview: controller/07-bgp-rr/overview.md
+      - Route Reflector Config: controller/07-bgp-rr/configuration.md
+      - Route Reflector Monitoring: controller/07-bgp-rr/monitoring.md
+      - VRF Overview: controller/08-vrf/overview.md
+      - VRF Configuration: controller/08-vrf/configuration.md
+      - MP-BGP Integration: controller/08-vrf/mp-bgp.md
+      - VRF Batch Deploy: controller/08-vrf/batch-deploy.md
+    - High Availability:
+      - HA Overview: controller/12-ha/overview.md
+      - HA Configuration: controller/12-ha/configuration.md
+      - DC/DR Failover: controller/12-ha/dcdr-failover.md
+    - Application Intelligence:
+      - Dashboard: controller/09-dpi/overview.md
+      - Applications: controller/09-dpi/app-intelligence.md
+      - App Categories: controller/09-dpi/app-categories.md
+      - App Groups: controller/09-dpi/app-groups.md
+      - App Traffic: controller/09-dpi/traffic-analysis.md
+      - Discovered Devices: controller/09-dpi/discovered-devices.md
+      - Alerts & Anomalies: controller/09-dpi/alerts.md
+      - Distribution Log: controller/09-dpi/distribution-log.md
+      - Snapshots: controller/09-dpi/snapshots.md
+    - Data Usage Dashboard:
+      - Overview: controller/10-data-usage/overview.md
+      - Per-Device Analytics: controller/10-data-usage/per-device.md
+      - Cellular Analytics: controller/10-data-usage/cellular.md
+    - Geographic Info:
+      - Overview: controller/18-geo/overview.md
+    - Cas & Certificates:
+      - Overview: controller/19-cas/overview.md
+    - RADIUS:
+      - Overview: controller/20-radius/overview.md
+    - Monitoring:
+      - Overview: controller/21-monitoring/overview.md
+    - Ipam:
+      - Overview: controller/22-ipam/overview.md
+    - Firmware:
+      - Overview: controller/23-firmware/overview.md
+    - Network Topology:
+      - Overview: controller/24-network-topology/overview.md
+    - Settings:
+      - Overview: controller/25-settings/overview.md
+    - Report:
+      - Report Templates: controller/11-reports/templates.md
+      - Email Scheduling: controller/11-reports/email-scheduling.md
+      - Export (PDF/CSV): controller/11-reports/export.md
+    - Logs:
+      - Overview: controller/26-logs/overview.md
+    - REST API Reference:
+      - Authentication: controller/14-api/authentication.md
+      - NsBond API: controller/14-api/nsbond.md
+      - DPI API: controller/14-api/dpi.md
+      - HA API: controller/14-api/ha.md
+      - Health API: controller/14-api/health.md
+    - Administration:
+      - Admin Panel: controller/15-admin/django-admin.md
+      - Background Workers: controller/15-admin/celery.md
+      - Health Monitoring: controller/15-admin/health-monitoring.md
+      - Audit Logging: controller/15-admin/audit-logging.md
+    - Troubleshooting:
+      - Common Issues: controller/16-troubleshooting/common-issues.md
+      - Deployment Issues: controller/16-troubleshooting/deployment.md
+      - API Troubleshooting: controller/16-troubleshooting/api.md
+    - Glossary: controller/glossary.md
+
+extra:
+  version:
+    provider: mike
+    default: latest
+  social: []
+  generator: false
+
+copyright: Copyright &copy; 2026 Nexapp Technologies Pvt. Ltd.

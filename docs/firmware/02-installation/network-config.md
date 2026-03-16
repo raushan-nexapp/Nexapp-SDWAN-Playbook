@@ -17,21 +17,7 @@ Before configuring interfaces, plan your network layout. A typical NexappOS depl
 
 ### Example: Dual-WAN Branch Office
 
-```
-ISP-A (Fiber)             ISP-B (LTE/Broadband)
-  │                           │
-  ▼                           ▼
-┌──────────────────────────────────┐
-│  NexappOS Router                  │
-│  eth0 = WAN1 (192.0.2.10)       │
-│  eth1 = WAN2 (198.51.100.20)    │
-│  eth2 + eth3 = LAN (bridge)     │
-│         192.168.1.1/24           │
-└──────────────────────────────────┘
-                │
-         Local Network
-       192.168.1.0/24
-```
+![NexappOS Dual-WAN Topology](../../assets/images/nexappos_dual_wan_topology.svg)
 
 ### Planning Checklist
 
